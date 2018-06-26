@@ -349,20 +349,21 @@ function playBackRecord() {
 
 		<div class="consj">
 			<span>播放某段时间的音频</span>
+			<br>
 			<input class="btn" type="button" value="时间段音频播放" onclick="playAudio();">
 
-
+			<br>
 			<span>0.使用seekTo播放在线音频</span>
 			<input id="httpPosition" type="text" value="2500">
 			<input class="btn" type="button" value="定位播放" onclick="httpSeekTo();">
 
-
+			<br>
 			<input class="btn" type="button" value="选择音频文件" onclick="openMusicExplorer();">
-
+			<br>
 			<span>选择好的音频文件为：</span>
-
+			<br>
 			<div class="tcxx" id="file"></div>
-
+			<br>
 			<input id="hidText" type="hidden" value="">
 
 			<!--标准版测试路径，测试时将上一行注释掉，以避免控件id冲突-->
@@ -379,100 +380,110 @@ function playBackRecord() {
 
 			<input class="textbox"id="hidText" type="text"-->hidText
 
-			
 
+			<br>
 			<span>1.打开音乐</span>
-
+			<br>
 			<input class="btn" type="button" value="打开音乐" onclick="audioMgr(-1,document.getElementById('hidText').value);">
-
+			<br>
 			<span>2.播放音乐</span>
-
+			<br>
 			<input class="btn" type="button" value="音乐播放" onclick="audioMgr(0,'');">
+			<br>
 			<span>3.获取当前播放位置</span>
-
+			<br>
 			<input class="btn" type="button" value="获取当前播放位置" onclick="getCurrentPosition();">
-
+			<br>
 			<span>4.停止播放</span>
-
+			<br>
 			<input class="btn" type="button" value="停止播放" onclick="audioMgr(2,'');">
-
+			<br>
 			<span>5.暂停播放</span>
-
+			<br>
 			<input class="btn" type="button" value="暂停播放" onclick="audioMgr(3,'');">
 
 			<!--<span>6.获取播放器状态</span>-->
 
 			<!--<input class="btn" type="button" value="获取播放器状态" onclick="getPlayerState();">-->
+			<br>
 			<span>6.定位播放</span>
+			<br>
 			<input id="position" type="text" value="">
+			<br>
 			<input class="btn" type="button" value="定位播放" onclick="seekTo();">
-
+			<br>
 			<span>7.声音 +</span>
-
+			<br>
 			<input class="btn" type="button" value="声音 +" onclick="audioMgr(5,'');">
-
+			<br>
 			<span>8.声音 -</span>
-
+			<br>
 			<input class="btn" type="button" value="声音 -" onclick="audioMgr(6,'');">
-
+			<br>
 			<span>9.打开音乐播放界面</span>
-
+			<br>
 			<input class="btn" type="button" value="添加音频文件" onclick="openListMusicExplorer();">
-
+			<br>
 			<span>音频文件列表</span>
-
+			<br>
 			<textarea class="tcxx" id="musicList" ></textarea>
-
+			<br>
 			<input class="btn" type="button" value="打开音乐界面" onclick="audioMgr(7,document.getElementById('hidText').value);">
-
+			<br>
 			<span>10.音效测试</span>
-			<span>输入音效文件id</span> 
-
-			<input class="textbox"id="dirPath" type="text" value="8"> 
-
+			<br>
+			<span>输入音效文件id</span>
+			<br>
+			<input class="textbox"id="dirPath" type="text" value="8">
+			<br>
 			<span>选择音效文件</span>
-
+			<br>
 			<input class="btn" type="button" value="选择音效文件" onclick="openSoundExplorer();">
-
+			<br>
 			<div class="tcxx" id="Soundfile"></div>
-
+			<br>
 			<input id="SoundhidText" type="hidden" value="">
-
+			<br>
             <span>添加音效</span>
-
+			<br>
             <input class="btn" type="button" value="添加音效" onclick="audioMgr(12,document.getElementById('SoundhidText').value);">
-
+			<br>
             <span>打开音效</span>
-
+			<br>
             <input class="btn" type="button" value="打开音效" onclick="audioMgr(9,'');">
-
+			<br>
             <span>播放音效</span>
-
+			<br>
 			<input class="btn" type="button" value="播放音效" onclick="audioMgr(10,'');">
-
+			<br>
 			<span>停止音效</span>
-
+			<br>
 			<input class="btn" type="button" value="停止音效" onclick="audioMgr(11,'');">
-
+			<br>
             <span>关闭音效</span>
-
-            <input class="btn" type="button" value="关闭音效" onclick="audioMgr(13,'');"> 
-
+			<br>
+            <input class="btn" type="button" value="关闭音效" onclick="audioMgr(13,'');">
+			<br>
 			<span>11.录音</span>
-
+			<br>
 			<input class="btn" type="button" value="录音" onclick="uexAudio.record(1,'cui');">
-
+			<br>
 
 	        <input class="btn" type="button" value="开始后台录音"
 
-				onclick="uexAudio.startBackgroundRecord(0,'test');"> <input
+				onclick="uexAudio.startBackgroundRecord(0,'test');">
+			<br>
+			<input
 
 				class="btn" type="button" value="停止后台录音"
 
-				onclick="stopBackgroundRecord();"> <span>音频文件地址为：</span>
+				onclick="stopBackgroundRecord();">
+			<br>
+			<span>音频文件地址为：</span>
+			<br>
 
 			<div class="tcxx" id="backrecord"></div>
-
+			<br>
 			<input class="btn" type="button" value="播放录音"	onclick="playBackRecord();">
 			<br>
 			<input class="btn" type="button" value="设置播放模式(扬声器)"	onclick="playMode();">

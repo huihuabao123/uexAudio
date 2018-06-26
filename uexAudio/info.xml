@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexAudio" version="4.2.1" build="21">
+    <plugin uexName="uexAudio" version="4.2.2" build="22">
+        <build>22:添加了TestRecord方法，检测用户是否能录音</build>
         <build>21:删除停止正在播放音频后的回调函数</build>
         <build>20:修复多次播放后，mediaplay因内存不足异常的问题</build>
         <build>19:新增录音权限拒绝监听回调,添加英文资源包,修复报无权限的问题</build>

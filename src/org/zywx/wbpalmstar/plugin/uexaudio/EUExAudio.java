@@ -294,6 +294,60 @@ public class EUExAudio extends EUExBase {
      * 此测试对hybrid开发人员和用户是透明的。
      */
     public void startBackgroundRecord(String[] parma) {
+//        for (String par : parma) {
+//            BDebug.i(par);
+//        }
+//        if (parma.length<1) {
+//            return;
+//        }
+        final String audioFolder = mBrwView.getRootWidget().getWidgetPath() + BUtility.F_APP_AUDIO;
+//        if (!testedPermission) {
+//            try {
+//                BDebug.i("thread", Thread.currentThread() + "");
+//                TestBackgroundRecord(audioFolder);
+//            } catch (Exception e) {
+//                if (BDebug.DEBUG) {
+//                    e.printStackTrace();
+//                }
+//                start_record_fail = true;
+//                Toast.makeText(mContext, EUExUtil.getResStringID("plugin_audio_permission_denied"), Toast.LENGTH_SHORT).show();
+//                callbackRecordPermissionDenied();
+//                return;
+//            } finally {
+//                File file = new File(audioFolder + "testPermission.amr");
+//                file.delete();
+//            }
+//        }
+        final String[] parm=parma;
+        new Thread(){
+            public void run() {
+                String fileName=null;
+                if (parm.length>1){
+                    fileName=parm[1];
+                }else {
+                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
+                    Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+                    String str = formatter.format(curDate);
+                    fileName = String.valueOf(str);
+                }
+                if (startBackgroundRecord_singleton) {
+                    // 开始正式录音
+                    start_record_fail = false;
+                    testedPermission = true;
+                    audioRecorder.startRecord(new File(audioFolder), Integer.valueOf(parm[0]),fileName);
+                    startBackgroundRecord_singleton = false;
+                }
+            }
+        }.start();
+    }
+
+
+    /**
+     * 检测是否有录音权限
+     * 测试录音，如果可以录音则用户继续录音
+     * @param parma
+     */
+    public void TestRecord(String[] parma){
         for (String par : parma) {
             BDebug.i(par);
         }
@@ -318,27 +372,6 @@ public class EUExAudio extends EUExBase {
                 file.delete();
             }
         }
-        final String[] parm=parma;
-        new Thread(){
-            public void run() {
-                String fileName=null;
-                if (parm.length>1){
-                    fileName=parm[1];
-                }else {
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
-                    Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-                    String str = formatter.format(curDate);
-                    fileName = String.valueOf(str);
-                }
-                if (startBackgroundRecord_singleton) {
-                    // 开始正式录音
-                    start_record_fail = false;
-                    testedPermission = true;
-                    audioRecorder.startRecord(new File(audioFolder), Integer.valueOf(parm[0]),fileName);
-                    startBackgroundRecord_singleton = false;
-                }
-            }
-        }.start();
     }
 
     private void TestBackgroundRecord(String audioFolder) throws Exception {

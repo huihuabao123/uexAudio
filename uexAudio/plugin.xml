@@ -13,6 +13,7 @@
         <method name="openPlayer" />
         <method name="record" />
         <method name="startBackgroundRecord" />
+        <method name="TestRecord" />
         <method name="stopBackgroundRecord" />
         <method name="openSoundPool" />
         <method name="addSound" />

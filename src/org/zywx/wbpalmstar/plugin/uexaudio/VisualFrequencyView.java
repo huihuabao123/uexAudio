@@ -37,13 +37,17 @@ public class VisualFrequencyView extends View {
 	private static final int HEIGHT_COUNT = 12;
 	private static final int ACTION_UPDATE_VIEW = 100;
 	private int[] list = new int[12];
+	//蓝色的竖条
 	private Bitmap blueBlock;
+	//灰色的竖条
 	private Bitmap grayBolck;
+	//竖条的宽高
 	private int blockWidth;
 	private int blockHeight;
 	private boolean isUpdating = false;
 	private Random random = new Random();
 	 private ResoureFinder finder = null;
+
 	private Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			if (isUpdating) {
@@ -86,8 +90,10 @@ public class VisualFrequencyView extends View {
 		super.onDraw(canvas);
 		final Bitmap localGray = grayBolck;
 		final Bitmap localBlue = blueBlock;
+		//Bitmap的宽高
 		final int w = blockWidth;
 		final int h = blockHeight;
+
 		final int[] localList = list;
 		for (int i = 0; i < WIDTH_COUNT; i++) {
 			final int itemValue = localList[i];
@@ -137,6 +143,11 @@ public class VisualFrequencyView extends View {
 		return isUpdating;
 	}
 
+	/**
+	 * 将Drawable转成Bitmap
+	 * @param drawable
+	 * @return
+	 */
 	private Bitmap getBitmap(Drawable drawable) {
 		Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(),
 				drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
@@ -147,6 +158,10 @@ public class VisualFrequencyView extends View {
 		return bitmap;
 	}
 
+	/**
+	 * 赋值数组元素随机数
+	 * @return
+	 */
 	private int[] getRandomArray() {
 		int[] array = new int[WIDTH_COUNT];
 		for (int i = 0, size = array.length; i < size; i++) {
