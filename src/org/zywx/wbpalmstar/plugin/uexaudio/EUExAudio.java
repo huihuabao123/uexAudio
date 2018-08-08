@@ -159,6 +159,13 @@ public class EUExAudio extends EUExBase {
         }
     }
 
+    public void  release(String[] parm){
+        if(m_pfMusicPlayer!=null){
+            m_pfMusicPlayer.release();
+        }
+
+    }
+
 	/*
 	 * 跳转到指定位置播放音乐接口
 	 */

@@ -25,5 +25,33 @@
         <method name="getPlayerState" />
         <method name="getCurrentPosition" />
         <method name="seekTo" />
+        <method name="release"/>
+    </plugin>
+    <plugin
+        className="org.zywx.wbpalmstar.plugin.uexaudio.EUExAudio2"
+        uexName="uexAudio2">
+        <method name="open"/>
+        <method name="play"/>
+        <method name="pause"/>
+        <method name="replay"/>
+        <method name="stop"/>
+        <method name="volumeUp"/>
+        <method name="volumeDown"/>
+        <method name="openPlayer"/>
+        <method name="record"/>
+        <method name="startBackgroundRecord"/>
+        <method name="TestRecord" />
+        <method name="stopBackgroundRecord"/>
+        <method name="openSoundPool"/>
+        <method name="addSound"/>
+        <method name="playFromSoundPool"/>
+        <method name="stopFromSoundPool"/>
+        <method name="closeSoundPool"/>
+        <method name="setPlayMode"/>
+        <method name="setProximityState"/>
+        <method name="getPlayerState" />
+        <method name="getCurrentPosition" />
+        <method name="seekTo" />
+        <method name="release"/>
     </plugin>
 </uexplugins>
